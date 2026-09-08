@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog | CompliAI Dental</title>
+<meta name="description" content="Working notes on dental AI compliance: data protection, AI transparency, professional standards and medical device rules, for dentists wherever they practise." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="canonical" href="https://dentalcompliance.app/blog" />
+<style>
+  :root{
+    --white:#ffffff; --grey-1:#f5f5f7; --grey-2:#fafafa;
+    --ink:#1d1d1f; --ink-2:#424245; --muted:#6e6e73; --muted-2:#86868b;
+    --line:#e8e8ed; --line-2:#d2d2d7;
+    --teal:#0f9e9e; --teal-dark:#0c8585; --teal-tint:#e6f6f6;
+    --r-card:18px; --r-pill:980px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--white);line-height:1.6;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .site-header{
+    position:sticky;top:0;z-index:20;background:rgba(255,255,255,.82);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid var(--line);
+  }
+  .site-header .wrap{display:flex;align-items:center;gap:13px;height:60px}
+  .mark{
+    width:34px;height:34px;border-radius:9px;background:var(--teal);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;font-size:13px;color:#fff;flex:none;letter-spacing:.02em;text-decoration:none;
+  }
+  .site-header h1{font-size:15px;margin:0;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+  .site-header p{margin:0;font-size:12px;color:var(--muted-2);line-height:1.4}
+  .site-nav{margin-left:auto;display:flex;gap:22px;align-items:center}
+  .site-nav a{font-size:14px;font-weight:500;color:var(--ink-2)}
+  .site-nav a:hover{color:var(--teal);text-decoration:none}
+
+  .doc-head{padding:72px 0 48px;text-align:center;border-bottom:1px solid var(--line)}
+  .doc-head h2{font-size:48px;line-height:1.08;margin:0 0 16px;font-weight:700;letter-spacing:-.026em}
+  .doc-head p{font-size:18px;color:var(--muted);margin:0 auto;max-width:600px}
+
+  main{padding:56px 0 88px}
+  .posts{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .post-card{
+    display:block;background:var(--white);border:1px solid var(--line);
+    border-radius:var(--r-card);padding:28px;color:inherit;
+    transition:border-color .15s ease,transform .15s ease;
+  }
+  .post-card:hover{border-color:var(--line-2);text-decoration:none;transform:translateY(-2px)}
+  .post-card .kicker{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);font-weight:600;margin-bottom:12px}
+  .post-card h3{margin:0 0 10px;font-size:20px;line-height:1.3;color:var(--ink);font-weight:600;letter-spacing:-.014em}
+  .post-card p{margin:0 0 14px;font-size:15px;color:var(--muted);line-height:1.55}
+  .post-card .date{font-size:12.5px;color:var(--muted-2)}
+  .empty-note{
+    text-align:center;color:var(--muted-2);font-size:16px;
+    border:1px dashed var(--line-2);border-radius:var(--r-card);padding:56px 24px;
+  }
+  .empty-note b{display:block;color:var(--ink);font-size:19px;font-weight:600;margin-bottom:8px}
+
+  .site-footer{
+    background:var(--white);border-top:1px solid var(--line);
+    color:var(--muted);padding:44px 0;text-align:center;font-size:14px;
+  }
+  .site-footer b{color:var(--ink);font-weight:600}
+  .site-footer .disc{margin:16px auto 0;font-size:12px;color:var(--muted-2);line-height:1.7;max-width:660px}
+
+  @media (max-width:860px){ .posts{grid-template-columns:1fr} }
+  @media (max-width:640px){
+    .doc-head{padding:52px 0 36px}
+    .doc-head h2{font-size:33px}
+    .site-nav{gap:16px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="/">CA</a>
+    <div>
+      <h1>CompliAI Dental</h1>
+      <p>Dental AI compliance screening, built by AI4This</p>
+    </div>
+    <nav class="site-nav">
+      <a href="/blog">Blog</a>
+      <a href="/#demo">Screener</a>
+    </nav>
+  </div>
+</header>
+
+<div class="doc-head">
+  <div class="wrap">
+    <h2>Notes on dental AI compliance</h2>
+    <p>Working notes on the rules, the grey areas, and what they mean in practice.</p>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <!-- POSTS:START
+         Newest first. To publish, copy a .post-card block below and add the
+         matching post file at /blog/<slug>.html. Keep this marker comment. -->
+    <div class="empty-note">
+      <b>First posts are on their way.</b>
+      In the meantime, put a scenario through the screener.
+    </div>
+    <!-- POSTS:END -->
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Built by a <b>GDC-registered dentist</b> and AI systems architect.
+    <div class="disc">
+      Screening tool, not legal advice. <a href="/terms">Full terms and disclaimer</a> · Built by AI4This
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
