@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /blog/POST-TEMPLATE.html
+
+Sitemap: https://dentalcompliance.app/sitemap.xml
