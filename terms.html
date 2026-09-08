@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms, Disclaimer and Privacy Policy | CompliAI Dental</title>
+<meta name="description" content="Terms of use, disclaimer, privacy policy and verdict key for CompliAI Dental, the dental AI compliance screener built by AI4This." />
+<meta name="theme-color" content="#ffffff" />
+<style>
+  :root{
+    --white:#ffffff;
+    --grey-1:#f5f5f7;
+    --grey-2:#fafafa;
+    --ink:#1d1d1f;
+    --ink-2:#424245;
+    --muted:#6e6e73;
+    --muted-2:#86868b;
+    --line:#e8e8ed;
+    --line-2:#d2d2d7;
+    --teal:#0f9e9e;
+    --teal-dark:#0c8585;
+    --teal-tint:#e6f6f6;
+    --green:#1a7f4b;
+    --amber:#a86a00;
+    --red:#c0392b;
+    --r-card:18px;
+    --r-pill:980px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+  .doc{max-width:720px;margin:0 auto;padding:0 24px}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Header */
+  .site-header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(255,255,255,.82);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid var(--line);
+  }
+  .site-header .wrap{display:flex;align-items:center;gap:13px;height:60px}
+  .mark{
+    width:34px;height:34px;border-radius:9px;background:var(--teal);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;font-size:13px;color:#fff;flex:none;letter-spacing:.02em;
+    text-decoration:none;
+  }
+  .site-header h1{font-size:15px;margin:0;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+  .site-header p{margin:0;font-size:12px;color:var(--muted-2);line-height:1.4}
+  .site-nav{margin-left:auto;display:flex;gap:22px;align-items:center}
+  .site-nav a{font-size:14px;font-weight:500;color:var(--ink-2)}
+  .site-nav a:hover{color:var(--teal);text-decoration:none}
+
+  /* Title block */
+  .doc-head{padding:72px 0 40px;text-align:center;border-bottom:1px solid var(--line)}
+  .doc-head h2{
+    font-size:44px;line-height:1.1;margin:0 0 16px;
+    font-weight:700;letter-spacing:-.024em;color:var(--ink);
+  }
+  .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+  .meta span{
+    background:var(--grey-1);border:1px solid var(--line);color:var(--ink-2);
+    font-size:12.5px;font-weight:500;padding:6px 14px;border-radius:var(--r-pill);
+  }
+
+  /* Sections */
+  .sec{padding:56px 0;border-bottom:1px solid var(--line)}
+  .sec:last-of-type{border-bottom:none}
+  .num{
+    font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--teal);margin-bottom:10px;
+  }
+  .sec h3{font-size:30px;line-height:1.2;margin:0 0 22px;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+  .sec h4{font-size:17px;margin:32px 0 12px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+  .sec p{margin:0 0 16px;font-size:16px;color:var(--ink-2)}
+  .sec ul{margin:0 0 16px;padding:0;list-style:none}
+  .sec li{
+    position:relative;font-size:16px;color:var(--ink-2);
+    padding:9px 0 9px 22px;border-bottom:1px solid var(--line);
+  }
+  .sec li:last-child{border-bottom:none}
+  .sec li::before{
+    content:"";position:absolute;left:4px;top:18px;
+    width:5px;height:5px;border-radius:50%;background:var(--line-2);
+  }
+  .sec li b{color:var(--ink);font-weight:600}
+
+  /* Callouts */
+  .callout{
+    background:var(--grey-1);border:1px solid var(--line);
+    border-radius:var(--r-card);padding:22px 24px;margin:0 0 26px;
+  }
+  .callout p{margin:0;font-size:16px;color:var(--ink)}
+  .callout.warn{background:#fdf6e8;border-color:#f0e0bd}
+  .callout.warn p{color:#6b5010}
+
+  /* Verdict key */
+  .keys{display:grid;grid-template-columns:1fr;gap:10px;margin:0 0 20px}
+  .key{
+    border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--grey-2);
+  }
+  .key .kt{
+    font-weight:600;font-size:11.5px;margin-bottom:6px;
+    display:flex;align-items:center;gap:8px;
+    letter-spacing:.07em;text-transform:uppercase;
+  }
+  .key .kt::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
+  .key .kd{font-size:15px;color:var(--muted);line-height:1.55}
+  .key.green .kt{color:var(--green)}
+  .key.amber .kt{color:var(--amber)}
+  .key.red .kt{color:var(--red)}
+  .key.grey .kt{color:var(--muted)}
+
+  /* Footer */
+  .site-footer{
+    background:var(--white);border-top:1px solid var(--line);
+    color:var(--muted);padding:44px 0;text-align:center;font-size:14px;
+  }
+  .site-footer b{color:var(--ink);font-weight:600}
+  .site-footer .disc{
+    margin:16px auto 0;font-size:12px;color:var(--muted-2);
+    line-height:1.7;max-width:660px;
+  }
+
+  @media (max-width:640px){
+    .doc-head{padding:52px 0 32px}
+    .doc-head h2{font-size:31px}
+    .sec{padding:44px 0}
+    .sec h3{font-size:24px}
+    .site-nav{gap:16px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="/">CA</a>
+    <div>
+      <h1>CompliAI Dental</h1>
+      <p>Dental AI compliance screening, built by AI4This</p>
+    </div>
+    <nav class="site-nav">
+      <a href="/blog">Blog</a>
+      <a href="/#demo">Screener</a>
+    </nav>
+  </div>
+</header>
+
+<div class="doc-head">
+  <div class="doc">
+    <h2>Terms, disclaimer and privacy policy</h2>
+    <div class="meta">
+      <span>Version 1.0</span>
+      <span>Effective May 2026</span>
+      <span>Last reviewed May 2026</span>
+      <span>England and Wales / UK GDPR</span>
+    </div>
+  </div>
+</div>
+
+<div class="doc">
+
+  <!-- 01 DISCLAIMER -->
+  <section class="sec" id="disclaimer">
+    <div class="num">01</div>
+    <h3>Disclaimer</h3>
+
+    <div class="callout warn">
+      <p>This tool is a compliance screening instrument. It is not legal advice and must not be treated as such.</p>
+    </div>
+
+    <p>CompliAI Dental is an AI-powered compliance screening tool designed to help dental professionals and healthcare technology businesses identify potential regulatory issues in AI systems, proposals, scripts, and workflows before seeking qualified legal or regulatory counsel.</p>
+
+    <h4>What CompliAI Dental does</h4>
+    <ul>
+      <li>Provides a preliminary regulatory screen against five frameworks: UK GDPR / EU GDPR, the EU AI Act (Regulation 2024/1689), GDC Advertising and Communication Standards, the Medical Device Regulations (MDR 2017/745), and ICO AI Guidance.</li>
+      <li>Returns structured verdicts (PERMITTED / DISCLOSE REQUIRED / PROHIBITED / SEEK SPECIALIST ADVICE) with references to specific articles or guidelines.</li>
+      <li>Identifies issues in AI proposals, agent scripts, business plans, and product descriptions submitted by the user.</li>
+    </ul>
+
+    <h4>What CompliAI Dental does not do</h4>
+    <ul>
+      <li>Provide legal advice or act as a solicitor, barrister, or regulatory consultant.</li>
+      <li>Assess vendor Data Processing Agreements (DPAs) or confirm their legal adequacy.</li>
+      <li>Register systems with Eudamed, the ICO, or any regulatory authority.</li>
+      <li>Make GDC fitness-to-practise determinations.</li>
+      <li>Guarantee that a system assessed as PERMITTED will be found compliant by a regulator.</li>
+      <li>Substitute for independent legal review before deployment of any AI system.</li>
+    </ul>
+
+    <h4>Limitation of liability</h4>
+    <p>AI4This, Dr Vivian Onu-Nzegbulem, and Dental Amplify Training accept no liability for any loss, regulatory sanction, reputational damage, or harm arising from reliance on assessments produced by CompliAI Dental. Regulatory positions stated in this tool reflect the law as understood at the date of the last update. Legislation changes; always verify against current statute.</p>
+    <p>Users are solely responsible for ensuring their AI systems, products, and communications comply with all applicable laws and professional obligations.</p>
+
+    <div class="callout">
+      <p>Before you deploy any AI system, obtain independent legal advice from a qualified solicitor with expertise in data protection and AI regulation. For GDC matters: <a href="https://www.gdc-uk.org">gdc-uk.org</a> · For data protection: <a href="https://ico.org.uk">ico.org.uk</a> · For MDR: <a href="https://health.ec.europa.eu">health.ec.europa.eu</a></p>
+    </div>
+  </section>
+
+  <!-- 02 TERMS OF USE -->
+  <section class="sec" id="terms">
+    <div class="num">02</div>
+    <h3>Terms of use</h3>
+
+    <h4>Acceptance</h4>
+    <p>By using CompliAI Dental, whether via the Pickaxe interface, a white-labelled deployment, or any other channel, you confirm that you have read, understood, and accepted these terms in full. If you do not accept these terms, do not use the tool.</p>
+
+    <h4>Permitted use</h4>
+    <ul>
+      <li>Using the tool to screen AI proposals, workflows, scripts, and products for potential regulatory issues prior to seeking legal advice.</li>
+      <li>Sharing individual compliance verdicts internally within your dental practice or organisation for information purposes.</li>
+      <li>Using the tool as part of a Dental Amplify Training cohort programme where access has been granted.</li>
+    </ul>
+
+    <h4>Prohibited use</h4>
+    <ul>
+      <li>Presenting CompliAI Dental outputs as formal legal opinions, regulatory clearance, or qualified professional advice to any third party.</li>
+      <li>Using outputs to market AI products to dental practices as "GDC-compliant" or "GDPR-cleared" based solely on a CompliAI Dental assessment.</li>
+      <li>Submitting patient-identifiable data, confidential patient records, or any special category personal data to the tool.</li>
+      <li>Reverse engineering, copying, or reproducing the tool's system prompt, knowledge base, or underlying compliance framework for commercial use without written permission from AI4This.</li>
+      <li>Using the tool in jurisdictions where such use would be unlawful.</li>
+    </ul>
+
+    <h4>Data submitted to the tool</h4>
+    <p>Do not submit patient-identifiable information, personal health records, or any data that could identify a living individual to CompliAI Dental. The tool is designed to assess proposals, scripts, and system descriptions, not patient data. Any data submitted is subject to the privacy terms of the underlying AI infrastructure, described in the privacy policy below.</p>
+
+    <h4>Intellectual property</h4>
+    <p>The Dental Amplify Compliance Oracle framework, the nine-rule compliance structure, the CompliAI Dental brand, and all associated documentation are the intellectual property of AI4This and Dr Vivian Onu-Nzegbulem. The regulatory frameworks referenced (GDPR, EU AI Act, MDR, GDC Guidance, ICO Guidance) are public law and guidance documents; AI4This claims no ownership over these primary sources.</p>
+
+    <h4>Changes to these terms</h4>
+    <p>AI4This reserves the right to update these terms at any time. The effective date at the top of this page indicates when the current version took effect. Continued use of the tool after an update constitutes acceptance of the revised terms.</p>
+  </section>
+
+  <!-- 03 PRIVACY POLICY -->
+  <section class="sec" id="privacy">
+    <div class="num">03</div>
+    <h3>Privacy policy</h3>
+
+    <p>This policy describes how AI4This handles information in connection with CompliAI Dental. It applies to all users of the tool regardless of how they access it.</p>
+
+    <h4>Data controller</h4>
+    <p>AI4This, operated by Dr Vivian Onu-Nzegbulem (London, UK). Contact: <a href="mailto:hello@ai4this.com">hello@ai4this.com</a></p>
+
+    <h4>What data we process</h4>
+    <ul>
+      <li><b>Content you submit:</b> text, documents, proposals, and scripts submitted to CompliAI Dental for compliance screening. This is processed by the underlying AI model to generate assessments.</li>
+      <li><b>Usage data:</b> basic interaction data may be logged by the hosting platform (Pickaxe and its infrastructure providers) for service operation purposes.</li>
+    </ul>
+    <p>We do not knowingly collect, store, or process special category personal data (health data, biometric data, or patient records) through this tool. If you inadvertently submit such data, it will be processed by the AI model in the same way as any other input. Do not submit patient-identifiable information.</p>
+
+    <h4>Lawful basis for processing</h4>
+    <p>Processing of content you submit is carried out on the basis of legitimate interests (Article 6(1)(f) UK GDPR), specifically the legitimate interest in providing the compliance screening service you have requested. Where the service is provided under a paid subscription or cohort programme agreement, processing is also carried out on the basis of contract performance (Article 6(1)(b)).</p>
+
+    <h4>Third-party AI infrastructure</h4>
+    <p>CompliAI Dental operates on Pickaxe, which uses third-party AI model infrastructure. Content you submit may be processed by AI model providers. We ensure that any infrastructure used has appropriate Data Processing Agreements in place. You should review Pickaxe's own privacy policy for full details of how your data is handled at the platform level.</p>
+
+    <h4>Data retention</h4>
+    <p>AI4This does not independently store the content of your submissions beyond the duration of your session. Platform-level retention is governed by Pickaxe's infrastructure policies.</p>
+
+    <h4>Your rights</h4>
+    <p>Under UK GDPR, you have the right to access, correct, and where applicable erase personal data held about you. To exercise these rights, contact <a href="mailto:hello@ai4this.com">hello@ai4this.com</a></p>
+
+    <h4>Supervisory authority</h4>
+    <p>You have the right to lodge a complaint with the Information Commissioner's Office (ICO) if you believe your data has been mishandled: <a href="https://ico.org.uk">ico.org.uk</a></p>
+  </section>
+
+  <!-- 04 VERDICT KEY -->
+  <section class="sec" id="verdicts">
+    <div class="num">04</div>
+    <h3>Verdict key</h3>
+
+    <p>All CompliAI Dental assessments use the following four verdict labels. Understanding these labels is part of using the tool correctly.</p>
+
+    <div class="keys">
+      <div class="key green">
+        <div class="kt">Permitted</div>
+        <div class="kd">The element described passes the compliance screen as described. No specific regulatory action is required before proceeding. Standard good practice (data minimisation, security) still applies.</div>
+      </div>
+      <div class="key amber">
+        <div class="kt">Disclose required</div>
+        <div class="kd">The element is permitted only if specific disclosure, consent, or labelling steps are taken first. The assessment will specify exactly what is required.</div>
+      </div>
+      <div class="key red">
+        <div class="kt">Prohibited</div>
+        <div class="kd">The element as described is not permitted under the current regulatory framework. It must be redesigned before deployment. The assessment will specify the governing rule.</div>
+      </div>
+      <div class="key grey">
+        <div class="kt">Seek specialist advice</div>
+        <div class="kd">Compliance status depends on factors this tool cannot assess, such as a specific vendor's DPA terms, MDR classification details, or jurisdiction-specific rules. Independent specialist advice is required before proceeding.</div>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <p>A PERMITTED verdict means the element passed this screening tool's nine-rule check. It does not constitute regulatory clearance, legal sign-off, or a guarantee of compliance. Always verify with qualified legal counsel before deployment.</p>
+    </div>
+  </section>
+
+  <!-- 05 CONTACT -->
+  <section class="sec" id="contact">
+    <div class="num">05</div>
+    <h3>Contact and about</h3>
+
+    <p>CompliAI Dental is built and maintained by AI4This.</p>
+    <p>AI4This is an AI consultancy serving the global dental market, founded by Dr Vivian Onu-Nzegbulem, a practising GDC-registered dentist, systems architect, and AI consultant.</p>
+    <p>CompliAI Dental is part of the Dental Amplify Training ecosystem, a programme that equips dental professionals to build compliant, broadcast-quality AI systems for clinical education and professional development.</p>
+    <p>Website: <a href="https://ai4this.com">ai4this.com</a> · Email: <a href="mailto:hello@ai4this.com">hello@ai4this.com</a> · GDC registration: on file</p>
+    <p>These terms were last reviewed May 2026. Regulatory positions reflect the law as understood at that date.</p>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Built by a <b>GDC-registered dentist</b> and AI systems architect.
+    <div class="disc">
+      Screening tool, not legal advice. <a href="/terms">Full terms and disclaimer</a> · Built by AI4This
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
