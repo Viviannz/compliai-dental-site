@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ==========================================================
+     POST TEMPLATE. Copy this file to /blog/<slug>.html and fill
+     in every {{PLACEHOLDER}}. Do not link to this file directly.
+
+     CROSS-POSTING TO DENTAL AMPLIFY
+     A post can run in full on both sites. Exactly one of them is
+     the canonical original, and BOTH copies point at it:
+       - If this site is the original, canonical = this page's URL.
+       - If dentalamplify.com is the original, canonical = that URL.
+     Google then credits one source and neither site is penalised
+     for duplicate content.
+     ========================================================== -->
+
+<title>{{TITLE}} | CompliAI Dental</title>
+<meta name="description" content="{{META_DESCRIPTION}}" />
+<meta name="theme-color" content="#ffffff" />
+
+<!-- Set to the ORIGINAL post URL, on whichever site published it first. -->
+<link rel="canonical" href="{{CANONICAL_URL}}" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{TITLE}}" />
+<meta property="og:description" content="{{META_DESCRIPTION}}" />
+<meta property="og:url" content="https://dentalcompliance.app/blog/{{SLUG}}" />
+<meta property="article:published_time" content="{{ISO_DATE}}" />
+
+<style>
+  :root{
+    --white:#ffffff; --grey-1:#f5f5f7; --grey-2:#fafafa;
+    --ink:#1d1d1f; --ink-2:#424245; --muted:#6e6e73; --muted-2:#86868b;
+    --line:#e8e8ed; --line-2:#d2d2d7;
+    --teal:#0f9e9e; --teal-dark:#0c8585; --teal-tint:#e6f6f6;
+    --green:#1a7f4b; --amber:#a86a00; --red:#c0392b;
+    --r-card:18px; --r-pill:980px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--white);line-height:1.7;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+  .doc{max-width:680px;margin:0 auto;padding:0 24px}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .site-header{
+    position:sticky;top:0;z-index:20;background:rgba(255,255,255,.82);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid var(--line);
+  }
+  .site-header .wrap{display:flex;align-items:center;gap:13px;height:60px}
+  .mark{
+    width:34px;height:34px;border-radius:9px;background:var(--teal);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;font-size:13px;color:#fff;flex:none;letter-spacing:.02em;text-decoration:none;
+  }
+  .site-header h1{font-size:15px;margin:0;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+  .site-header p{margin:0;font-size:12px;color:var(--muted-2);line-height:1.4}
+  .site-nav{margin-left:auto;display:flex;gap:22px;align-items:center}
+  .site-nav a{font-size:14px;font-weight:500;color:var(--ink-2)}
+  .site-nav a:hover{color:var(--teal);text-decoration:none}
+
+  .post-head{padding:64px 0 36px;text-align:center;border-bottom:1px solid var(--line)}
+  .post-head .kicker{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);font-weight:600;margin-bottom:16px}
+  .post-head h2{font-size:44px;line-height:1.12;margin:0 auto 18px;font-weight:700;letter-spacing:-.026em;max-width:760px}
+  .post-head .meta{font-size:14px;color:var(--muted-2)}
+
+  article{padding:48px 0 24px;font-size:17.5px;color:var(--ink-2)}
+  article h3{font-size:26px;line-height:1.25;margin:44px 0 14px;font-weight:700;letter-spacing:-.018em;color:var(--ink)}
+  article h4{font-size:19px;margin:32px 0 10px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+  article p{margin:0 0 20px}
+  article ul,article ol{margin:0 0 20px;padding-left:22px}
+  article li{margin-bottom:10px}
+  article b,article strong{color:var(--ink);font-weight:600}
+  article blockquote{
+    margin:28px 0;padding:20px 24px;background:var(--grey-1);
+    border-left:3px solid var(--teal);border-radius:0 12px 12px 0;
+  }
+  article blockquote p:last-child{margin:0}
+  .callout{background:var(--grey-1);border:1px solid var(--line);border-radius:var(--r-card);padding:22px 24px;margin:28px 0}
+  .callout p{margin:0;font-size:16px}
+  .callout.warn{background:#fdf6e8;border-color:#f0e0bd}
+  .callout.warn p{color:#6b5010}
+
+  .crosspost{
+    margin:40px 0 0;padding:16px 20px;background:var(--grey-2);
+    border:1px solid var(--line);border-radius:12px;
+    font-size:14px;color:var(--muted);
+  }
+
+  .post-foot{border-top:1px solid var(--line);margin-top:48px;padding:36px 0 0;text-align:center}
+  .cta{
+    display:inline-block;background:var(--teal);color:#fff;font-weight:600;font-size:16px;
+    padding:14px 32px;border-radius:var(--r-pill);transition:background .18s ease;
+  }
+  .cta:hover{background:var(--teal-dark);text-decoration:none}
+  .back{display:block;margin-top:24px;font-size:14px}
+
+  .site-footer{
+    background:var(--white);border-top:1px solid var(--line);
+    color:var(--muted);padding:44px 0;text-align:center;font-size:14px;margin-top:64px;
+  }
+  .site-footer b{color:var(--ink);font-weight:600}
+  .site-footer .disc{margin:16px auto 0;font-size:12px;color:var(--muted-2);line-height:1.7;max-width:660px}
+
+  @media (max-width:640px){
+    .post-head{padding:44px 0 28px}
+    .post-head h2{font-size:31px}
+    article{font-size:16.5px}
+    article h3{font-size:22px}
+    .site-nav{gap:16px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="/">CA</a>
+    <div>
+      <h1>CompliAI Dental</h1>
+      <p>Dental AI compliance screening, built by AI4This</p>
+    </div>
+    <nav class="site-nav">
+      <a href="/blog">Blog</a>
+      <a href="/#demo">Screener</a>
+    </nav>
+  </div>
+</header>
+
+<div class="post-head">
+  <div class="doc">
+    <div class="kicker">{{KICKER}}</div>
+    <h2>{{TITLE}}</h2>
+    <div class="meta">{{DATE_READABLE}} · {{READ_TIME}} min read</div>
+  </div>
+</div>
+
+<div class="doc">
+  <article>
+
+    {{BODY}}
+
+    <!-- Include this only when the post also runs on Dental Amplify.
+    <div class="crosspost">
+      This post also appears on <a href="{{OTHER_URL}}">dentalamplify.com</a>.
+    </div>
+    -->
+
+    <div class="callout warn">
+      <p>Screening tool, not legal advice. Regulatory positions reflect the law as understood at the date above, and legislation changes. Obtain independent legal advice before deploying any AI system.</p>
+    </div>
+
+  </article>
+
+  <div class="post-foot">
+    <a class="cta" href="/#demo">Screen your own scenario</a>
+    <a class="back" href="/blog">Back to all posts</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Built by a <b>GDC-registered dentist</b> and AI systems architect.
+    <div class="disc">
+      Screening tool, not legal advice. <a href="/terms">Full terms and disclaimer</a> · Built by AI4This
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
