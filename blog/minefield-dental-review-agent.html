@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>The Minefield of Building a Dental Review Agent | CompliAI Dental</title>
+<meta name="description" content="I screened my own dental review automation before launch. It failed on four points. One simple question rescued it: the alert is not the reply." />
+<meta name="theme-color" content="#ffffff" />
+
+<!-- Set to the ORIGINAL post URL, on whichever site published it first. -->
+<link rel="canonical" href="https://dentalcompliance.app/blog/minefield-dental-review-agent" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Minefield of Building a Dental Review Agent" />
+<meta property="og:description" content="I screened my own dental review automation before launch. It failed on four points. One simple question rescued it: the alert is not the reply." />
+<meta property="og:url" content="https://dentalcompliance.app/blog/minefield-dental-review-agent" />
+<meta property="article:published_time" content="2026-09-19" />
+
+<style>
+  :root{
+    --white:#ffffff; --grey-1:#f5f5f7; --grey-2:#fafafa;
+    --ink:#1d1d1f; --ink-2:#424245; --muted:#6e6e73; --muted-2:#86868b;
+    --line:#e8e8ed; --line-2:#d2d2d7;
+    --teal:#0f9e9e; --teal-dark:#0c8585; --teal-tint:#e6f6f6;
+    --green:#1a7f4b; --amber:#a86a00; --red:#c0392b;
+    --r-card:18px; --r-pill:980px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--white);line-height:1.7;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+  .doc{max-width:680px;margin:0 auto;padding:0 24px}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .site-header{
+    position:sticky;top:0;z-index:20;background:rgba(255,255,255,.82);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid var(--line);
+  }
+  .site-header .wrap{display:flex;align-items:center;gap:13px;height:60px}
+  .mark{
+    width:34px;height:34px;border-radius:9px;background:var(--teal);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;font-size:13px;color:#fff;flex:none;letter-spacing:.02em;text-decoration:none;
+  }
+  .site-header h1{font-size:15px;margin:0;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+  .site-header p{margin:0;font-size:12px;color:var(--muted-2);line-height:1.4}
+  .site-nav{margin-left:auto;display:flex;gap:22px;align-items:center}
+  .site-nav a{font-size:14px;font-weight:500;color:var(--ink-2)}
+  .site-nav a:hover{color:var(--teal);text-decoration:none}
+
+  .post-head{padding:64px 0 36px;text-align:center;border-bottom:1px solid var(--line)}
+  .post-head .kicker{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);font-weight:600;margin-bottom:16px}
+  .post-head h2{font-size:44px;line-height:1.12;margin:0 auto 18px;font-weight:700;letter-spacing:-.026em;max-width:760px}
+  .post-head .meta{font-size:14px;color:var(--muted-2)}
+
+  article{padding:48px 0 24px;font-size:17.5px;color:var(--ink-2)}
+  article h3{font-size:26px;line-height:1.25;margin:44px 0 14px;font-weight:700;letter-spacing:-.018em;color:var(--ink)}
+  article h4{font-size:19px;margin:32px 0 10px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+  article p{margin:0 0 20px}
+  article ul,article ol{margin:0 0 20px;padding-left:22px}
+  article li{margin-bottom:10px}
+  article b,article strong{color:var(--ink);font-weight:600}
+  article blockquote{
+    margin:28px 0;padding:20px 24px;background:var(--grey-1);
+    border-left:3px solid var(--teal);border-radius:0 12px 12px 0;
+  }
+  article blockquote p:last-child{margin:0}
+  .callout{background:var(--grey-1);border:1px solid var(--line);border-radius:var(--r-card);padding:22px 24px;margin:28px 0}
+  .callout p{margin:0;font-size:16px}
+  .callout.warn{background:#fdf6e8;border-color:#f0e0bd}
+  .callout.warn p{color:#6b5010}
+
+  .crosspost{
+    margin:40px 0 0;padding:16px 20px;background:var(--grey-2);
+    border:1px solid var(--line);border-radius:12px;
+    font-size:14px;color:var(--muted);
+  }
+
+  .post-foot{border-top:1px solid var(--line);margin-top:48px;padding:36px 0 0;text-align:center}
+  .cta{
+    display:inline-block;background:var(--teal);color:#fff;font-weight:600;font-size:16px;
+    padding:14px 32px;border-radius:var(--r-pill);transition:background .18s ease;
+  }
+  .cta:hover{background:var(--teal-dark);text-decoration:none}
+  .back{display:block;margin-top:24px;font-size:14px}
+
+  .site-footer{
+    background:var(--white);border-top:1px solid var(--line);
+    color:var(--muted);padding:44px 0;text-align:center;font-size:14px;margin-top:64px;
+  }
+  .site-footer b{color:var(--ink);font-weight:600}
+  .site-footer .disc{margin:16px auto 0;font-size:12px;color:var(--muted-2);line-height:1.7;max-width:660px}
+
+  @media (max-width:640px){
+    .post-head{padding:44px 0 28px}
+    .post-head h2{font-size:31px}
+    article{font-size:16.5px}
+    article h3{font-size:22px}
+    .site-nav{gap:16px}
+  }
+  .pull{font-size:21px;line-height:1.45;font-weight:600;color:var(--ink);letter-spacing:-.012em;margin:32px 0;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  hr.rule{border:0;border-top:1px solid var(--line);margin:44px 0}
+  #detail + ul{font-size:15px;color:var(--muted)}
+  #detail + ul li{margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="/">CA</a>
+    <div>
+      <h1>CompliAI Dental</h1>
+      <p>Dental AI compliance screening, built by AI4This</p>
+    </div>
+    <nav class="site-nav">
+      <a href="/blog">Blog</a>
+      <a href="/#demo">Screener</a>
+    </nav>
+  </div>
+</header>
+
+<div class="post-head">
+  <div class="doc">
+    <div class="kicker">Case study · Why the alert is not the reply</div>
+    <h2>The Minefield of Building a Dental Review Agent</h2>
+    <div class="meta">19 September 2026 · Dr Vivian Onu-Nzegbulem · 10 min read</div>
+  </div>
+</div>
+
+<div class="doc">
+  <article>
+
+    <p>On a Friday in September I finished the plan for a small piece of automation I called the Review Desk. It was meant to help dental practices with their Google reviews.</p>
+<p>The idea was simple. When a new review arrived, the system would read it, choose a suitable reply from a set of approved templates, and put a draft in front of a person. The person would check it and post it. Nothing would go out on its own.</p>
+<p>I had written safety rules into the plan. Drafts only. Templates only. Never confirm that the reviewer is a patient. Send anything serious straight to a human. No procedures, no dates, no clinicians' names, no arguing with the reviewer.</p>
+<p>It looked responsible. Before building anything, I ran it through the same compliance screen I use for clients and asked one question: is this safe to launch?</p>
+<p>The answer was no. There were four separate problems, and any one of them would have stopped it. None of them were where I expected.</p>
+<h3>The plan</h3>
+<p>There were four moving parts.</p>
+<ul>
+<li>An <strong>email agent</strong>, software with its own inbox that can read incoming mail and reply, would receive Google's "you have a new review" emails.</li>
+<li>A <strong>drafting agent</strong> would read each review, pick template one, two or three, or flag it as serious, and write a draft reply.</li>
+<li>A <strong>workspace database</strong> would hold the templates and a queue of drafts.</li>
+<li>As a backup, an <strong>automation box</strong>, a computer in the cloud running a web browser, would log in to the practice's Google profile every weekday morning to catch anything the emails had missed.</li>
+</ul>
+<p>A person would then approve the reply and post it.</p>
+<p>I intended to offer this to practices. That detail mattered more than anything else.</p>
+<h3>Mine one: the friendly reply that gave away a patient</h3>
+<p>This one hurt, because it was hiding in the part I thought was finished.</p>
+<p>My template for good reviews said:</p>
+<blockquote>
+<p>Thank you for taking the time to share this. We're glad you had a good experience with our team.</p>
+</blockquote>
+<p>My template for mild complaints said:</p>
+<blockquote>
+<p>Thank you for your feedback. We're sorry this didn't meet your expectations.</p>
+</blockquote>
+<p>Both sound warm. Both quietly confirm that the reviewer was seen at the practice. "A good experience with our team" says they came in. "Didn't meet your expectations" says there was an experience to judge.</p>
+<p>The first rule on my own list was never to confirm that someone is a patient. I had broken it in the first line of the first template.</p>
+<p>There is a second problem. The reviewer may not be a patient at all. It could be a relative, a competitor, or someone who never came through the door. A reply that treats them as a patient either gives away something true or states something false. Neither is safe.</p>
+<p class="pull">The rule was right. The wording broke it. I had written both, so I never noticed.</p>
+<p>The fix is to reply to the review, not to the person's care. These are the rewritten templates.</p>
+<p><strong>For a good review:</strong></p>
+<blockquote>
+<p>Thank you for taking the time to leave a review. Feedback like this means a great deal to the team.</p>
+</blockquote>
+<p><strong>For a mild concern:</strong></p>
+<blockquote>
+<p>Thank you for this feedback. We are sorry to read it. Please contact the practice directly so we can understand what has happened and put it right where we can.</p>
+</blockquote>
+<p><strong>For a serious complaint, or anything clinical:</strong></p>
+<blockquote>
+<p>Thank you for raising this. We take all feedback seriously and we have a formal complaints procedure. Please contact the practice directly and we will respond through it. We are not able to discuss anyone's care publicly.</p>
+</blockquote>
+<p><strong>For anything involving harm, legal threats or safeguarding:</strong> post nothing until the practice's named lead has decided. If a holding reply is needed, use the serious complaint template word for word.</p>
+<p>If I could keep only one line, it would be the last sentence of the serious complaint template. It explains the silence without confirming anything, and it reads as professional rather than evasive.</p>
+<h3>Mine two: I had already said no to this</h3>
+<p>The moment a practice's reviews pass through software I run, I am handling that practice's data on its behalf. In data protection terms, that makes me a <em>processor</em>. It requires a written contract with every practice, and I cannot bring in any other company to handle that data without the practice's permission.</p>
+<p>My plan brought in three: the email agent, the workspace database and the automation box. Each would receive review content. There were no contracts and no permissions.</p>
+<p>What made this worse is that I had already reached this conclusion. Three weeks earlier I had looked at a commercial review-reply tool and decided not to build one, for exactly this reason. I wrote it down at the time.</p>
+<p>Then I designed one anyway, because this time it was framed as a helpful workflow rather than a product.</p>
+<p class="pull">The framing changed. The data did not.</p>
+<h3>Mine three: the password on the box</h3>
+<p>The automation box needed to log in to each practice's Google profile. In plain terms, that means a practice's Google password stored on a computer run by someone else.</p>
+<p>That breaks Google's terms. It takes control of the profile away from the practice. If anything went wrong, nobody could say who did it.</p>
+<p>The proper routes already exist. Google provides an official way for software to connect to a business profile with the practice's permission and no password shared. A practice can also add a named person as a manager of its profile. Both can be granted, limited and taken back. A shared password allows none of that.</p>
+<h3>Mine four: a review is health data</h3>
+<p>A review of a dental practice, with the reviewer's name and a mention of treatment, tells you something about that person's health. Data protection law treats health information as the most sensitive category there is.</p>
+<p>Using new technology to process that kind of information routinely, across several practices, is exactly the situation that calls for a formal risk assessment before you start. My plan had none.</p>
+<p>The regulators are moving in this direction too. The ICO has said it is preparing guidance to help small organisations check the AI tools they buy. Practices should expect to be asked what checks they made. A supplier who cannot hand over a risk assessment is making that harder, not easier.</p>
+<h3>The smaller hazards</h3>
+<p>Beyond the four main problems were several that would not stop a launch but would cause trouble later.</p>
+<ul>
+<li><strong>The complaints clock.</strong> A review that is really a complaint may start the practice's complaints procedure and its deadlines. My backup check only ran on weekday mornings. A serious review posted on a Friday evening would sit untouched until Monday.</li>
+<li><strong>The machine deciding what is serious.</strong> The system was told never to use a standard template for serious cases. But the system was still deciding which cases were serious, and missing one is the failure that matters most. The fix is to lean hard towards caution: anything under three stars, or anything mentioning harm, legal action, refunds or distress, goes to a person first.</li>
+<li><strong>Where the data lives.</strong> Two of the services were based in the United States. That can be lawful, but only with the right certifications or agreements in place. My plan also kept copies in two places with no rule for when they would be deleted.</li>
+<li><strong>The privacy notice.</strong> Each practice should tell patients that review replies are drafted with AI help and checked by a person. It costs nothing and it is honest.</li>
+</ul>
+<h3>The mine I nearly laid myself</h3>
+<p>Compliance mistakes run in both directions, and the screen caught one of mine going the wrong way.</p>
+<p>My instinct was to add an AI disclosure to every reply. I use strict disclosure rules for all AI-generated patient content, and it felt consistent.</p>
+<p>It would have been wrong. The European rules on disclosing AI-written text are aimed at text that informs the public on matters of public interest. A reply to a Google review is not that. Even where the rules might apply, there is an exemption when a person checks the text and takes responsibility for it, which is exactly what happens here. For UK-only practices those rules may not apply at all.</p>
+<p>The same goes for medical device rules. The Review Desk does not diagnose, monitor or recommend treatment. It is not a medical device and should not be labelled as one.</p>
+<p class="pull">Overcompliance is not caution. It teaches people the rules are arbitrary, and it wastes their attention on warnings that don't apply.</p>
+<h3>The question that got me out</h3>
+<p>After the verdict, I asked a question that felt almost too simple. What if the system did not write anything? What if it only told the practice that a new review had arrived?</p>
+<p>That changed everything.</p>
+<p>If the alert says "the practice has one new review, two stars, follow this link", nothing about any patient ever enters my systems. No review text. No reviewer name. No mention of treatment.</p>
+<p>That means no sensitive health data. No processor role. No formal risk assessment triggered. No question about data going overseas. The template problem, the missing contracts and the risk assessment all fall away at once.</p>
+<p>Two conditions keep it that way.</p>
+<p><strong>First, the alert must not be a forwarded Google email.</strong> Google's own "new review" email includes the reviewer's name and the full review. Forwarding it to an email agent is full processing dressed up as an alert. The system has to write its own message: practice, number of reviews, star rating, time, link. The moment it says "two stars, mentions implants", you are back in the minefield.</p>
+<p><strong>Second, the password problem does not go away.</strong> Something still has to connect to Google to know that a review exists. A shared password is the same failure whether the software then drafts a reply or just counts. The official connection, or a named manager, is still required.</p>
+<h3>The alert is not the reply</h3>
+<p>This is the point I most want other practices and other builders to take away.</p>
+<p>In AI workflows, the risk is not spread evenly. It gathers at one moment: when the machine reads something about a person and writes words about them. Watching is cheap. Speaking is expensive.</p>
+<p>The useful part of the Review Desk, the part that saves a practice time, is knowing quickly that a review has arrived. That part carries almost no regulatory weight. All four problems lived in the drafting: reading the review, choosing the words, and keeping copies.</p>
+<p>Many AI tools now being offered to dental practices bundle the watching and the speaking together, because the speaking looks impressive in a demonstration. Separate them, and you often find that most of the value sits in the part that is easy to make safe.</p>
+<p class="pull">Watching is cheap. Speaking is expensive.</p>
+<h3>Where it stands now</h3>
+<p>The Review Desk is designed, not built. The design is now in two stages.</p>
+<p><strong>Stage one</strong> is a watcher. It connects to Google the proper way, sends an alert containing no review content, and keeps a record of what it sent.</p>
+<p><strong>Stage two</strong> is the drafting, using the rewritten templates. It would only go ahead once there are contracts with each practice, a completed risk assessment, checked suppliers, and a named person responsible for serious reviews with a set response time.</p>
+<p>Stage two may never happen. If it does, it will be because that work is done, not because the demonstration looked good.</p>
+<h3>If you are about to buy or build one</h3>
+<p>Whether it is a review tool, an AI receptionist or a note-taker, the questions are the same. What does it read? What does it write? Where does it keep things? Who can get in?</p>
+<p>This is the screen I run first, on my own builds and on the tools practices ask me about: <strong><a href="/#demo">dentalcompliance.app</a></strong></p>
+<hr class="rule" />
+<h4 id="detail">For the detail-minded</h4>
+<ul>
+<li><strong>Mine one:</strong> GDC Standards for the Dental Team, Standard 4.2.3: <em>"You must not post any information or comments about patients on social networking or blogging sites."</em></li>
+<li><strong>Mine two:</strong> UK GDPR Article 28, processor contracts and sub-processor authorisation.</li>
+<li><strong>Mine three:</strong> Google's account terms and its terms on automated access. The proper routes are the Google Business Profile API with OAuth, or a Manager role on the profile.</li>
+<li><strong>Mine four:</strong> UK GDPR Article 9 (special category data, including health) and Article 35 (Data Protection Impact Assessments).</li>
+<li><strong>Where the data lives:</strong> UK GDPR Chapter V. The UK-US data bridge is in force, and the ICO confirmed in July 2026 that it stands independently of the EU arrangement. European regulators have since asked for the underlying framework to be reviewed, so it should not be treated as permanently settled.</li>
+<li><strong>Overcompliance:</strong> EU AI Act Article 50(4), which covers AI-generated text published to inform the public on matters of public interest, with an exemption where a person reviews it and holds editorial responsibility. Because a person approves every reply, UK GDPR Article 22 on fully automated decisions is not engaged either.</li>
+<li><strong>How long this stays true:</strong> The GDC's consultation on a new Framework for Professionalism, which will replace the Standards for the Dental Team, closed on 31 August 2026. The current Standards remain in force until the outcome is published. Dental Protection has asked the GDC to include explicit expectations on the use of AI. I will update this piece when that lands.</li>
+</ul>
+<hr class="rule" />
+<p><em>This essay was developed with an AI screening assistant. I reviewed it, and I own every judgement in it.</em></p>
+
+    <div class="callout warn">
+      <p>Screening tool, not legal advice. Regulatory positions reflect the law as understood at the date above, and legislation changes. Obtain independent legal advice before deploying any AI system.</p>
+    </div>
+
+  </article>
+
+  <div class="post-foot">
+    <a class="cta" href="/#demo">Screen your own scenario</a>
+    <a class="back" href="/blog">Back to all posts</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Built by a <b>GDC-registered dentist</b> and AI systems architect.
+    <div class="disc">
+      Screening tool, not legal advice. <a href="/terms">Full terms and disclaimer</a> · Built by AI4This
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
