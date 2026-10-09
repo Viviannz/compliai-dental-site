@@ -328,12 +328,7 @@
     <div class="screener-wrap">
       <div class="screener-card">
         <!-- Pickaxe deployment: CompliAI Dental compliance screener -->
-        <div id="pickaxe-embed-wrapper">
-          <script
-            src="https://app.pickaxe.co/embed/deployment-578811f3-bff2-4778-8bf0-e2786066e08f/inline.js"
-            async>
-          </script>
-        </div>
+        <div id="deployment-578811f3-bff2-4778-8bf0-e2786066e08f"></div>
       </div>
       <div class="starters">
         <span class="lbl">Or start with one of these</span>
@@ -378,13 +373,17 @@
   </div>
 </footer>
 
+<!-- Pickaxe embed loader (must stay for the screener to render).
+     Note: app.pickaxe.co/embed/.../inline.js does not resolve; use this loader. -->
+<script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
+
 <!-- Starter prompts write into the Pickaxe widget's own input. The widget
      renders into the page (no iframe, no shadow DOM), so its textarea is
      reachable. The native value setter plus an input event is required
      because the widget is React-controlled. -->
 <script>
 (function () {
-  var HOST = 'pickaxe-embed-wrapper';
+  var HOST = 'deployment-578811f3-bff2-4778-8bf0-e2786066e08f';
 
   function fill(text) {
     var host = document.getElementById(HOST);
