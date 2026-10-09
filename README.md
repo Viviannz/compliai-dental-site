@@ -35,7 +35,7 @@ practice-growth pieces belong on Dental Amplify.
 
 ## Danger zones
 
-- Do not change the Pickaxe deployment id `deployment-54520239-a257-4463-bd24-efa3de235da1`
+- Do not change the Pickaxe deployment id `deployment-578811f3-bff2-4778-8bf0-e2786066e08f` (inline embed in `#pickaxe-embed-wrapper`, swapped 9 Oct 2026)
   or remove the `<div>` that carries it.
 - Do not remove the Pickaxe loader script before `</body>`.
 - Do not remove the disclaimer from the footer or from under the screener.
