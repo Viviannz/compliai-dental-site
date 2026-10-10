@@ -163,6 +163,9 @@
     border-radius:var(--r-card);padding:0;overflow:hidden;min-height:120px;
     box-shadow:0 12px 34px rgba(0,0,0,.06);
   }
+  /* Deployment 578811f3 sets an inline max-width of 700px on its outer box,
+     which left a white strip on the right. Stretch it to fill the card. */
+  .screener-card .pickaxe-embed > div{max-width:100% !important;width:100% !important}
   .screener-note{color:var(--muted-2);font-size:13px;text-align:center;margin-top:20px;line-height:1.55}
 
   /* Starter prompts. Pickaxe has no native conversation-starter field, so
