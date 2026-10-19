@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pricing | CompliAI Dental</title>
+<meta name="description" content="CompliAI Dental pricing. Start with a 7-day free trial, then choose monthly or annual access to the dental AI compliance screener." />
+<link rel="canonical" href="https://dentalcompliance.app/pricing" />
+<meta name="theme-color" content="#ffffff" />
+<style>
+  :root{
+    --white:#ffffff;
+    --grey-1:#f5f5f7;
+    --grey-2:#fafafa;
+    --ink:#1d1d1f;
+    --ink-2:#424245;
+    --muted:#6e6e73;
+    --muted-2:#86868b;
+    --line:#e8e8ed;
+    --line-2:#d2d2d7;
+    --teal:#0f9e9e;
+    --teal-dark:#0c8585;
+    --teal-tint:#e6f6f6;
+    --r-card:18px;
+    --r-pill:980px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--white);line-height:1.6;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(255,255,255,.82);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid var(--line);
+  }
+  .site-header .wrap{display:flex;align-items:center;gap:13px;height:60px}
+  .brand{display:flex;align-items:center;gap:13px;color:inherit}
+  .brand:hover{text-decoration:none}
+  .mark{
+    width:34px;height:34px;border-radius:9px;background:var(--teal);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;font-size:13px;color:#fff;flex:none;letter-spacing:.02em;
+  }
+  .site-header h1{font-size:15px;margin:0;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+  .site-header p{margin:0;font-size:12px;color:var(--muted-2);line-height:1.4}
+  .site-nav{margin-left:auto;display:flex;gap:22px;align-items:center}
+  .site-nav a{font-size:14px;font-weight:500;color:var(--ink-2)}
+  .site-nav a:hover{color:var(--teal);text-decoration:none}
+  .site-nav a[aria-current="page"]{color:var(--teal)}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:84px 0 40px;text-align:center}
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--teal-tint);border:1px solid rgba(15,158,158,.22);
+    color:var(--teal-dark);font-size:13px;font-weight:600;
+    padding:6px 15px;border-radius:var(--r-pill);margin-bottom:24px;
+  }
+  .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal);flex:none}
+  .hero h2{
+    font-size:52px;line-height:1.08;margin:0 auto 18px;max-width:900px;
+    font-weight:700;letter-spacing:-.025em;
+  }
+  .hero h2 em{color:var(--teal);font-style:normal}
+  .hero .lede{font-size:19px;line-height:1.55;color:var(--muted);max-width:620px;margin:0 auto}
+
+  /* ---------- Plans ---------- */
+  .plans-section{padding:40px 0 88px}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+  .plan{
+    position:relative;display:flex;flex-direction:column;
+    background:var(--white);border:1px solid var(--line);
+    border-radius:var(--r-card);padding:32px 28px;
+  }
+  .plan.featured{border:2px solid var(--teal);padding:31px 27px;box-shadow:0 14px 38px rgba(15,158,158,.10)}
+  .plan .tag{
+    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--teal);color:#fff;font-size:12px;font-weight:600;
+    padding:4px 13px;border-radius:var(--r-pill);white-space:nowrap;letter-spacing:.01em;
+  }
+  .plan h3{margin:0 0 6px;font-size:20px;font-weight:600;letter-spacing:-.014em}
+  .plan .for{margin:0 0 22px;font-size:14.5px;color:var(--muted);line-height:1.5;min-height:44px}
+  .price{display:flex;align-items:baseline;gap:6px;margin-bottom:4px}
+  .price .amt{font-size:46px;font-weight:700;letter-spacing:-.03em;line-height:1}
+  .price .per{font-size:15px;color:var(--muted)}
+  .price-note{font-size:13.5px;color:var(--muted-2);margin:0 0 24px;min-height:21px}
+  .price-note b{color:var(--teal-dark);font-weight:600}
+  .plan ul{list-style:none;margin:0 0 28px;padding:0;flex:1}
+  .plan li{
+    position:relative;padding:9px 0 9px 26px;font-size:15px;color:var(--ink-2);
+    border-bottom:1px solid var(--line);line-height:1.5;
+  }
+  .plan li:last-child{border-bottom:none}
+  .plan li::before{
+    content:"";position:absolute;left:2px;top:15px;width:12px;height:7px;
+    border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);
+    transform:rotate(-45deg);
+  }
+  .btn{
+    display:block;text-align:center;font-weight:600;font-size:15.5px;
+    padding:13px 20px;border-radius:var(--r-pill);
+    transition:background .18s ease,border-color .18s ease,transform .18s ease;
+  }
+  .btn:hover{text-decoration:none;transform:translateY(-1px)}
+  .btn.primary{background:var(--teal);color:#fff}
+  .btn.primary:hover{background:var(--teal-dark)}
+  .btn.ghost{background:var(--white);color:var(--ink);border:1px solid var(--line-2)}
+  .btn.ghost:hover{border-color:var(--teal);color:var(--teal-dark)}
+  .plans-foot{text-align:center;color:var(--muted-2);font-size:13.5px;margin-top:26px;line-height:1.6}
+
+  /* ---------- Journey ---------- */
+  .band{background:var(--grey-1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  section{padding:84px 0}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 44px}
+  .section-head h3{font-size:34px;line-height:1.15;margin:0 0 12px;font-weight:700;letter-spacing:-.022em}
+  .section-head p{font-size:17px;color:var(--muted);margin:0}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;margin:0;padding:0}
+  .step{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:26px}
+  .step .n{
+    width:32px;height:32px;border-radius:50%;background:var(--teal-tint);color:var(--teal-dark);
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;margin-bottom:14px;
+  }
+  .step h4{margin:0 0 6px;font-size:17px;font-weight:600;letter-spacing:-.01em}
+  .step p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.55}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:760px;margin:0 auto}
+  .faq details{border-bottom:1px solid var(--line);padding:4px 0}
+  .faq details:first-child{border-top:1px solid var(--line)}
+  .faq summary{
+    cursor:pointer;list-style:none;padding:18px 32px 18px 0;position:relative;
+    font-size:16.5px;font-weight:600;color:var(--ink);letter-spacing:-.008em;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{
+    content:"+";position:absolute;right:4px;top:14px;font-size:22px;font-weight:400;color:var(--muted);
+  }
+  .faq details[open] summary::after{content:"\2212"}
+  .faq summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:6px}
+  .faq .ans{padding:0 0 20px;font-size:15.5px;color:var(--muted);line-height:1.65}
+  .faq .ans p{margin:0 0 10px}
+  .faq .ans p:last-child{margin:0}
+
+  /* ---------- Closing ---------- */
+  .closing{text-align:center}
+  .closing h3{font-size:32px;margin:0 0 12px;font-weight:700;letter-spacing:-.02em}
+  .closing p{font-size:17px;color:var(--muted);margin:0 auto 28px;max-width:560px}
+  .closing .btn{display:inline-block;padding:14px 32px}
+
+  /* ---------- Footer ---------- */
+  .site-footer{background:var(--white);border-top:1px solid var(--line);color:var(--muted);padding:44px 0;text-align:center;font-size:14px}
+  .site-footer b{color:var(--ink);font-weight:600}
+  .site-footer .disc{margin:16px auto 0;font-size:12px;color:var(--muted-2);line-height:1.7;max-width:660px}
+
+  @media (max-width:880px){
+    .plans{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+    .plan .for,.price-note{min-height:0}
+    .steps{grid-template-columns:1fr}
+  }
+  @media (max-width:640px){
+    .hero{padding:60px 0 28px}
+    .hero h2{font-size:36px;letter-spacing:-.02em}
+    .hero .lede{font-size:17px}
+    section{padding:60px 0}
+    .section-head h3{font-size:27px}
+    .site-header p{display:none}
+    .site-nav{gap:16px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <div class="mark">CA</div>
+      <div>
+        <h1>CompliAI Dental</h1>
+        <p>Dental AI compliance screening, built by AI4This</p>
+      </div>
+    </a>
+    <nav class="site-nav">
+      <a href="/blog">Blog</a>
+      <a href="/pricing" aria-current="page">Pricing</a>
+      <a href="/#demo">Screener</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="pill">7-day free trial</div>
+    <h2>Simple pricing for <em>safer dental AI</em></h2>
+    <p class="lede">Try the screener free for seven days. If it earns its place in your workflow, keep going monthly or save with an annual plan.</p>
+  </div>
+</div>
+
+<section class="plans-section">
+  <div class="wrap">
+    <div class="plans">
+
+      <div class="plan">
+        <h3>Free trial</h3>
+        <p class="for">Test the screener on your own scenarios before you commit.</p>
+        <div class="price"><span class="amt">$0</span></div>
+        <p class="price-note">7 days or 10 messages, whichever comes first</p>
+        <ul>
+          <li>Full ten-rule screen</li>
+          <li>Structured verdicts with the rule cited</li>
+          <li>Script, workflow and proposal audits</li>
+          <li>Upgrade any time from inside the screener</li>
+        </ul>
+        <a class="btn ghost" href="/#demo">Start free trial</a>
+      </div>
+
+      <div class="plan">
+        <h3>Monthly</h3>
+        <p class="for">For dentists screening AI tools, scripts and content as they come up.</p>
+        <div class="price"><span class="amt">$47</span><span class="per">/ month</span></div>
+        <p class="price-note">Billed monthly</p>
+        <ul>
+          <li>100 screener messages a month</li>
+          <li>Full ten-rule screen</li>
+          <li>Vendor due diligence questions</li>
+          <li>Screens drawn from a regularly updated regulation source</li>
+        </ul>
+        <a class="btn ghost" href="/#demo">Start free trial</a>
+      </div>
+
+      <div class="plan featured">
+        <span class="tag">Best value · 2 months free</span>
+        <h3>Annual</h3>
+        <p class="for">For practices making AI compliance part of everyday governance.</p>
+        <div class="price"><span class="amt">$470</span><span class="per">/ year</span></div>
+        <p class="price-note">Works out at about <b>$39 a month</b></p>
+        <ul>
+          <li>100 screener messages a month</li>
+          <li>Everything in Monthly</li>
+          <li>One payment, one renewal date</li>
+          <li>Save $94 against monthly billing</li>
+        </ul>
+        <a class="btn primary" href="/#demo">Start free trial</a>
+      </div>
+
+    </div>
+    <p class="plans-foot">Prices in US dollars. Each paid plan is for one user.<br />Screening tool, not legal advice. <a href="/terms">Full terms and disclaimer</a></p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <h3>How the trial works</h3>
+      <p>No guesswork about what happens next.</p>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <div class="n">1</div>
+        <h4>Sign up with your email</h4>
+        <p>Open the screener and enter your email to unlock your free trial.</p>
+      </li>
+      <li class="step">
+        <div class="n">2</div>
+        <h4>Screen for up to 7 days</h4>
+        <p>You get up to 10 messages across the seven days. Paste scenarios, scripts, adverts or vendor details.</p>
+      </li>
+      <li class="step">
+        <div class="n">3</div>
+        <h4>Choose a plan, or stop</h4>
+        <p>When either limit is reached, the screener invites you to choose Monthly or Annual. Nothing continues unless you choose a plan.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h3>Questions</h3>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>What counts as a message?</summary>
+        <div class="ans">
+          <p>Each reply the screener gives you counts as one message. A full assessment usually runs across a few messages, because the screener works in stages: the compliance table first, then the summary and priority actions, then a vendor letter if you need one.</p>
+          <p>As a rough guide, 100 messages a month covers around 25 to 30 full screens.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What happens when I reach my monthly limit?</summary>
+        <div class="ans"><p>The screener pauses and lets you know. Your allowance refreshes each month, so you can pick up again once it resets.</p></div>
+      </details>
+      <details>
+        <summary>Can I paste patient information into the screener?</summary>
+        <div class="ans"><p>No. Please describe scenarios using fictional or fully anonymised details. The screener assesses tools, workflows, scripts and content. It does not need, and should not receive, real patient data.</p></div>
+      </details>
+      <details>
+        <summary>Is this legal advice?</summary>
+        <div class="ans"><p>No. CompliAI Dental is a screening tool that helps you spot regulatory risk and see the next safe step. Where an issue needs a specialist, the verdict says so and tells you what to check. See the <a href="/terms">full terms and disclaimer</a>.</p></div>
+      </details>
+      <details>
+        <summary>I run a practice with several clinicians. Is there a team plan?</summary>
+        <div class="ans"><p>Each plan is currently for one user. If you would like access for a whole team, email <a href="mailto:hello@dentalamplify.com">hello@dentalamplify.com</a> and we will talk it through.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band closing">
+  <div class="wrap">
+    <h3>Screen your next AI decision before it reaches a patient</h3>
+    <p>Seven days, ten messages, the full ten-rule screen.</p>
+    <a class="btn primary" href="/#demo">Start free trial</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Built by a <b>GDC-registered dentist</b> and AI systems architect.
+    <div class="disc">
+      Screening tool, not legal advice. <a href="/terms">Full terms and disclaimer</a> · Built by AI4This
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
