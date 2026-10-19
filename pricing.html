@@ -119,6 +119,19 @@
   .btn.ghost:hover{border-color:var(--teal);color:var(--teal-dark)}
   .plans-foot{text-align:center;color:var(--muted-2);font-size:13.5px;margin-top:26px;line-height:1.6}
 
+  /* ---------- Features ---------- */
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .feature{background:var(--white);border:1px solid var(--line);border-radius:var(--r-card);padding:26px}
+  .feature .ic{
+    width:40px;height:40px;border-radius:11px;background:var(--teal-tint);color:var(--teal-dark);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .feature .ic svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .feature h4{margin:0 0 6px;font-size:17px;font-weight:600;letter-spacing:-.01em}
+  .feature p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.55}
+  @media (max-width:880px){ .features{grid-template-columns:1fr 1fr} }
+  @media (max-width:600px){ .features{grid-template-columns:1fr} }
+
   /* ---------- Journey ---------- */
   .band{background:var(--grey-1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   section{padding:84px 0}
@@ -259,6 +272,47 @@
 </section>
 
 <section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <h3>What you get</h3>
+      <p>Every plan, including the free trial, includes the full screener.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
+        <h4>Ten-rule compliance screen</h4>
+        <p>Every input is checked against ten rules covering patient data, AI disclosure, advertising, medical device risk and accountability.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+        <h4>Clear verdicts, rule by rule</h4>
+        <p>Permitted, disclose required, prohibited or seek specialist advice, with the rule cited and the action you need to take.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <h4>Script and content audits</h4>
+        <p>Paste a chatbot prompt, agent script, advert or AI clone video script. Risky wording comes back with a safer rewrite.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+        <h4>AI system deployment gate</h4>
+        <p>Before you switch on a receptionist, scribe or triage tool, it checks the evidence you need first: DPA, DPIA, device status and approvals.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H5.2L4 17.5z"/><path d="M8 9h8M8 12h5"/></svg></div>
+        <h4>Vendor due diligence letter</h4>
+        <p>Get a ready-to-send letter with the exact questions to ask an AI supplier about data residency, sub-processors and training on your data.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <h4>Jurisdiction-aware</h4>
+        <p>Screens against the regulators that apply where you practise, from the UK and EU to the USA, Australia and beyond, using a regularly updated regulation source.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <div class="section-head">
       <h3>How the trial works</h3>
