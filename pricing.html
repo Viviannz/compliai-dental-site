@@ -2,9 +2,10 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8" />
+<link rel="icon" href="/logo-mark.svg" type="image/svg+xml" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pricing | CompliAI Dental</title>
-<meta name="description" content="CompliAI Dental pricing. Start with a 7-day free trial, then choose monthly or annual access to the dental AI compliance screener." />
+<title>Pricing | dentalcompliance.app</title>
+<meta name="description" content="dentalcompliance.app pricing. Start with a 7-day free trial, then choose monthly or annual access to the dental AI compliance screener." />
 <link rel="canonical" href="https://dentalcompliance.app/pricing" />
 <meta name="theme-color" content="#ffffff" />
 <style>
@@ -48,7 +49,7 @@
   .brand{display:flex;align-items:center;gap:13px;color:inherit}
   .brand:hover{text-decoration:none}
   .mark{
-    width:34px;height:34px;border-radius:9px;background:var(--teal);
+    width:34px;height:34px;flex:none;
     display:flex;align-items:center;justify-content:center;
     font-weight:600;font-size:13px;color:#fff;flex:none;letter-spacing:.02em;
   }
@@ -190,6 +191,7 @@
     .site-header p{display:none}
     .site-nav{gap:16px}
   }
+  @media (max-width:600px){.site-header .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;row-gap:8px}.site-header p{display:none}.site-nav{margin-left:0;width:100%;gap:20px}}
 </style>
 </head>
 <body>
@@ -197,13 +199,14 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <div class="mark">CA</div>
+      <div class="mark"><img src="/logo-mark.svg" alt="" width="34" height="34" /></div>
       <div>
-        <h1>CompliAI Dental</h1>
-        <p>Dental AI compliance screening, built by AI4This</p>
+        <h1>dentalcompliance<span style="color:var(--teal)">.app</span></h1>
+        <p>Dental AI compliance screening, built by Dental Amplify</p>
       </div>
     </a>
     <nav class="site-nav">
+      <a href="/about">About</a>
       <a href="/blog">Blog</a>
       <a href="/pricing" aria-current="page">Pricing</a>
       <a href="/#demo">Screener</a>
@@ -361,7 +364,7 @@
       </details>
       <details>
         <summary>Is this legal advice?</summary>
-        <div class="ans"><p>No. CompliAI Dental is a screening tool that helps you spot regulatory risk and see the next safe step. Where an issue needs a specialist, the verdict says so and tells you what to check. See the <a href="/terms">full terms and disclaimer</a>.</p></div>
+        <div class="ans"><p>No. dentalcompliance.app is a screening tool that helps you spot regulatory risk and see the next safe step. Where an issue needs a specialist, the verdict says so and tells you what to check. See the <a href="/terms">full terms and disclaimer</a>.</p></div>
       </details>
       <details>
         <summary>I run a practice with several clinicians. Is there a team plan?</summary>
@@ -383,7 +386,7 @@
   <div class="wrap">
     Built by a <b>GDC-registered dentist</b> and AI systems architect.
     <div class="disc">
-      Screening tool, not legal advice. <a href="/terms">Full terms and disclaimer</a> · Built by AI4This
+      Screening tool, not legal advice. <a href="/terms">Full terms and disclaimer</a> · Built by Dental Amplify
     </div>
   </div>
 </footer>

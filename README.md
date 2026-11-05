@@ -9,6 +9,7 @@ Source for **dentalcompliance.app**. Static site, no build step, deployed via Ne
 |---|---|
 | `index.html` | Homepage. Contains the Pickaxe screener embed. |
 | `pricing.html` | Plans and free trial. Served at `/pricing`. Prices must match the Pickaxe access groups. |
+| `about.html` | About page, founder story. Served at `/about`. |
 | `terms.html` | Terms, disclaimer, privacy policy, verdict key. Served at `/terms`. |
 | `blog/index.html` | Blog listing. Served at `/blog`. |
 | `blog/<slug>.html` | An individual post. Served at `/blog/<slug>`. |

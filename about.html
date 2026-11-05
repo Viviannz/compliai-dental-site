@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" href="/logo-mark.svg" type="image/svg+xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About | dentalcompliance.app</title>
+<meta name="description" content="Why a GDC-registered dentist built dentalcompliance.app, a dental-specific AI compliance screener, and what it can and cannot do for you." />
+<meta name="theme-color" content="#ffffff" />
+<style>
+  :root{
+    --white:#ffffff;
+    --grey-1:#f5f5f7;
+    --grey-2:#fafafa;
+    --ink:#1d1d1f;
+    --ink-2:#424245;
+    --muted:#6e6e73;
+    --muted-2:#86868b;
+    --line:#e8e8ed;
+    --line-2:#d2d2d7;
+    --teal:#0f9e9e;
+    --teal-dark:#0c8585;
+    --teal-tint:#e6f6f6;
+    --green:#1a7f4b;
+    --amber:#a86a00;
+    --red:#c0392b;
+    --r-card:18px;
+    --r-pill:980px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+  .doc{max-width:720px;margin:0 auto;padding:0 24px}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Header */
+  .site-header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(255,255,255,.82);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid var(--line);
+  }
+  .site-header .wrap{display:flex;align-items:center;gap:13px;height:60px}
+  .mark{
+    width:34px;height:34px;flex:none;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;font-size:13px;color:#fff;flex:none;letter-spacing:.02em;
+    text-decoration:none;
+  }
+  .site-header h1{font-size:15px;margin:0;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+  .site-header p{margin:0;font-size:12px;color:var(--muted-2);line-height:1.4}
+  .site-nav{margin-left:auto;display:flex;gap:22px;align-items:center}
+  .site-nav a{font-size:14px;font-weight:500;color:var(--ink-2)}
+  .site-nav a:hover{color:var(--teal);text-decoration:none}
+
+  /* Title block */
+  .doc-head{padding:72px 0 40px;text-align:center;border-bottom:1px solid var(--line)}
+  .doc-head h2{
+    font-size:44px;line-height:1.1;margin:0 0 16px;
+    font-weight:700;letter-spacing:-.024em;color:var(--ink);
+  }
+  .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+  .meta span{
+    background:var(--grey-1);border:1px solid var(--line);color:var(--ink-2);
+    font-size:12.5px;font-weight:500;padding:6px 14px;border-radius:var(--r-pill);
+  }
+
+  /* Sections */
+  .sec{padding:56px 0;border-bottom:1px solid var(--line)}
+  .sec:last-of-type{border-bottom:none}
+  .num{
+    font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--teal);margin-bottom:10px;
+  }
+  .sec h3{font-size:30px;line-height:1.2;margin:0 0 22px;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+  .sec h4{font-size:17px;margin:32px 0 12px;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+  .sec p{margin:0 0 16px;font-size:16px;color:var(--ink-2)}
+  .sec ul{margin:0 0 16px;padding:0;list-style:none}
+  .sec li{
+    position:relative;font-size:16px;color:var(--ink-2);
+    padding:9px 0 9px 22px;border-bottom:1px solid var(--line);
+  }
+  .sec li:last-child{border-bottom:none}
+  .sec li::before{
+    content:"";position:absolute;left:4px;top:18px;
+    width:5px;height:5px;border-radius:50%;background:var(--line-2);
+  }
+  .sec li b{color:var(--ink);font-weight:600}
+
+  /* Callouts */
+  .callout{
+    background:var(--grey-1);border:1px solid var(--line);
+    border-radius:var(--r-card);padding:22px 24px;margin:0 0 26px;
+  }
+  .callout p{margin:0;font-size:16px;color:var(--ink)}
+  .callout.warn{background:#fdf6e8;border-color:#f0e0bd}
+  .callout.warn p{color:#6b5010}
+
+  /* Verdict key */
+  .keys{display:grid;grid-template-columns:1fr;gap:10px;margin:0 0 20px}
+  .key{
+    border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--grey-2);
+  }
+  .key .kt{
+    font-weight:600;font-size:11.5px;margin-bottom:6px;
+    display:flex;align-items:center;gap:8px;
+    letter-spacing:.07em;text-transform:uppercase;
+  }
+  .key .kt::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
+  .key .kd{font-size:15px;color:var(--muted);line-height:1.55}
+  .key.green .kt{color:var(--green)}
+  .key.amber .kt{color:var(--amber)}
+  .key.red .kt{color:var(--red)}
+  .key.grey .kt{color:var(--muted)}
+
+  /* Footer */
+  .site-footer{
+    background:var(--white);border-top:1px solid var(--line);
+    color:var(--muted);padding:44px 0;text-align:center;font-size:14px;
+  }
+  .site-footer b{color:var(--ink);font-weight:600}
+  .site-footer .disc{
+    margin:16px auto 0;font-size:12px;color:var(--muted-2);
+    line-height:1.7;max-width:660px;
+  }
+
+  @media (max-width:640px){
+    .doc-head{padding:52px 0 32px}
+    .doc-head h2{font-size:31px}
+    .sec{padding:44px 0}
+    .sec h3{font-size:24px}
+    .site-nav{gap:16px}
+  }
+  .btn{display:inline-block;background:var(--teal);color:#fff;font-weight:600;font-size:15px;padding:12px 22px;border-radius:980px;margin:8px 10px 0 0}
+  .btn:hover{background:var(--teal-dark);text-decoration:none}
+  .btn.ghost{background:none;color:var(--teal);border:1px solid var(--line-2)}
+  .btn.ghost:hover{background:var(--teal-tint)}
+  .portrait{display:flex;justify-content:center;margin:0 0 22px}
+  @media (max-width:600px){.site-header .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;row-gap:8px}.site-header p{display:none}.site-nav{margin-left:0;width:100%;gap:20px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="/" aria-label="dentalcompliance.app home"><img src="/logo-mark.svg" alt="" width="34" height="34" /></a>
+    <div>
+      <h1>dentalcompliance<span style="color:var(--teal)">.app</span></h1>
+      <p>Dental AI compliance screening, built by Dental Amplify</p>
+    </div>
+    <nav class="site-nav">
+      <a href="/about" aria-current="page">About</a>
+      <a href="/blog">Blog</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/#demo">Screener</a>
+    </nav>
+  </div>
+</header>
+
+<div class="doc-head">
+  <div class="doc">
+    <div class="portrait"><img src="/logo-mark.svg" alt="" width="64" height="64" /></div>
+    <h2>About dentalcompliance.app</h2>
+    <div class="meta">
+      <span>Built by a GDC-registered dentist</span>
+      <span>Screening tool, not legal advice</span>
+    </div>
+  </div>
+</div>
+
+<div class="doc">
+
+  <section class="sec" id="story">
+    <div class="num">01</div>
+    <h3>Why this exists</h3>
+    <p>I'm Dr Vivian Onu-Nzegbulem. I have practised dentistry for nearly three decades, and I now build AI systems for dental teams.</p>
+    <p>The pattern I kept seeing was simple. Dentists are being offered AI tools faster than anyone can check them: receptionist bots, note-takers, chatbots, AI-generated videos. Every one of them touches patient data, professional standards or advertising rules, and the questions that matter rarely come up in the sales demo.</p>
+    <p>So I built the screener I wanted for my own work. Before I deploy a workflow or publish a video, I run it through the same ten rules this site uses. It does not replace a solicitor or a regulator. It helps you see the risk early and know exactly what to ask next.</p>
+  </section>
+
+  <section class="sec" id="background">
+    <div class="num">02</div>
+    <h3>Background</h3>
+    <ul>
+      <li><b>Clinical:</b> GDC-registered dentist with nearly three decades of clinical practice.</li>
+      <li><b>Legal:</b> Postgraduate Diploma in Law, The University of Law.</li>
+      <li><b>Technical:</b> AI Systems Architect, designing AI workflows and agents for dentistry.</li>
+      <li><b>Dental Amplify:</b> founder of Dental Amplify, which produces AI clone videos for dental professionals and builds this screener.</li>
+    </ul>
+  </section>
+
+  <section class="sec" id="what">
+    <div class="num">03</div>
+    <h3>What the screener checks</h3>
+    <p>Paste a scenario, workflow, script, advert or vendor proposal. The screener tests it against ten rule areas and returns a structured verdict for each element, with the rule triggered and the action needed.</p>
+    <ul>
+      <li>Patient data, health data and biometrics</li>
+      <li>AI disclosure and synthetic media transparency</li>
+      <li>Dental advertising and professional conduct</li>
+      <li>Data residency, international transfers and sub-processors</li>
+      <li>Medical device risk</li>
+      <li>AI risk classification</li>
+      <li>Privacy governance and clinical oversight</li>
+      <li>Automated decisions and human intervention</li>
+      <li>Provider and deployer accountability</li>
+      <li>AI account tier and contract coverage</li>
+    </ul>
+    <p>Each finding is marked permitted, disclose required, prohibited, or seek specialist advice. The <a href="/terms#verdicts">verdict key</a> explains each one.</p>
+  </section>
+
+  <section class="sec" id="limits">
+    <div class="num">04</div>
+    <h3>What it is not</h3>
+    <div class="callout warn">
+      <p>dentalcompliance.app is a screening tool, not legal advice. It does not approve, certify or register anything. Where an answer depends on facts it cannot verify, such as a vendor's contract terms or medical device status, it says so and tells you what to check.</p>
+    </div>
+    <p style="margin-top:28px">
+      <a class="btn" href="/#demo">Try the screener</a>
+      <a class="btn ghost" href="mailto:hello@dentalamplify.com">Get in touch</a>
+    </p>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Built by a <b>GDC-registered dentist</b> and AI systems architect.
+    <div class="disc">
+      Screening tool, not legal advice. <a href="/terms">Full terms and disclaimer</a> · Built by Dental Amplify
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -2,9 +2,10 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8" />
+<link rel="icon" href="/logo-mark.svg" type="image/svg+xml" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>The Minefield of Building a Dental Review Agent | CompliAI Dental</title>
+<title>The Minefield of Building a Dental Review Agent | dentalcompliance.app</title>
 <meta name="description" content="I screened my own dental review automation before launch. It failed on four points. One simple question rescued it: the alert is not the reply." />
 <meta name="theme-color" content="#ffffff" />
 
@@ -47,7 +48,7 @@
   }
   .site-header .wrap{display:flex;align-items:center;gap:13px;height:60px}
   .mark{
-    width:34px;height:34px;border-radius:9px;background:var(--teal);
+    width:34px;height:34px;flex:none;
     display:flex;align-items:center;justify-content:center;
     font-weight:600;font-size:13px;color:#fff;flex:none;letter-spacing:.02em;text-decoration:none;
   }
@@ -111,18 +112,20 @@
   hr.rule{border:0;border-top:1px solid var(--line);margin:44px 0}
   #detail + ul{font-size:15px;color:var(--muted)}
   #detail + ul li{margin-bottom:8px}
+  @media (max-width:600px){.site-header .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:10px;row-gap:8px}.site-header p{display:none}.site-nav{margin-left:0;width:100%;gap:20px}}
 </style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="mark" href="/">CA</a>
+    <a class="mark" href="/" aria-label="dentalcompliance.app home"><img src="/logo-mark.svg" alt="" width="34" height="34" /></a>
     <div>
-      <h1>CompliAI Dental</h1>
-      <p>Dental AI compliance screening, built by AI4This</p>
+      <h1>dentalcompliance<span style="color:var(--teal)">.app</span></h1>
+      <p>Dental AI compliance screening, built by Dental Amplify</p>
     </div>
     <nav class="site-nav">
+      <a href="/about">About</a>
       <a href="/blog">Blog</a>
       <a href="/pricing">Pricing</a>
       <a href="/#demo">Screener</a>
@@ -265,7 +268,7 @@
   <div class="wrap">
     Built by a <b>GDC-registered dentist</b> and AI systems architect.
     <div class="disc">
-      Screening tool, not legal advice. <a href="/terms">Full terms and disclaimer</a> · Built by AI4This
+      Screening tool, not legal advice. <a href="/terms">Full terms and disclaimer</a> · Built by Dental Amplify
     </div>
   </div>
 </footer>
